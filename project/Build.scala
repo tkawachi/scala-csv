@@ -18,6 +18,7 @@ object ScalaCSVProject extends Build {
         else
           "org.scalatest" %% "scalatest" % "1.9.1" % "test"
       ),
+      libraryDependencies += "org.scalacheck" %% "scalacheck" % "1.11.6" % "test",
       libraryDependencies ++= PartialFunction.condOpt(CrossVersion.partialVersion(scalaVersion.value)){
         case Some((2, scalaMajor)) if scalaMajor >= 11 =>
           "org.scala-lang.modules" %% "scala-parser-combinators" % "1.0.1"
